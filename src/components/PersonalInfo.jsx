@@ -9,7 +9,7 @@ const PersonalInfo = () => {
 
     setUserData((prevInfo) => {
 
-      const temp = { ...prevInfo.userInfo, [name]: name === 'phoneNumber' ? +value : value }
+      const temp = { ...prevInfo.userInfo, [name]: value }
       return { ...prevInfo, userInfo: temp }
     })
   }
