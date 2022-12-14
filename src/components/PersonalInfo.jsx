@@ -2,7 +2,7 @@ import React from 'react'
 import { useGlobalContext } from '../context/AppContext'
 
 const PersonalInfo = () => {
-  const { setUserData, userData: { userInfo }, emailEmpty, nameEmpty, phoneNumberEmpty, emailInvalid } = useGlobalContext()
+  const { setUserData, userData: { userInfo }, emailEmpty, nameEmpty, phoneNumberEmpty, emailInvalid, phoneNumberInvalid } = useGlobalContext()
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -55,7 +55,7 @@ const PersonalInfo = () => {
           <div className='flex flex-col gap-1 animate-fade-in'>
             <div className='flex justify-between items-center w-full'>
               <label htmlFor="number" className='text-marine-blue text-[0.81rem] md:text-[0.9rem] font-medium leading-4'>Phone Number</label>
-              <span className={`${phoneNumberEmpty ? 'block animate-fade-in' : 'hidden'} text-strawberry-red text-[0.81rem] md:text-[0.9rem] font-bold leading-4`}>This field is required</span>
+              <span className={`${phoneNumberEmpty || phoneNumberInvalid ? 'block animate-fade-in' : 'hidden'} text-strawberry-red text-[0.81rem] md:text-[0.9rem] font-bold leading-4`}>{phoneNumberInvalid ? 'Please enter a valid phone number' : 'This field is required'}</span>
             </div>
             <input
               value={userInfo.phoneNumber}
