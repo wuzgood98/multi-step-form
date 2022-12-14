@@ -16,6 +16,7 @@ const Controls = ({ position = 'fixed', display = 'hidden md:flex' }) => {
     if (step === 1) {
       if (userInfo.email && !emailIsValid(userInfo.email)) {
         setEmailInvalid(true)
+        return
       } else {
         setEmailInvalid(false)
       }
