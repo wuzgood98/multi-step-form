@@ -44,7 +44,7 @@ const Controls = ({ position = 'fixed', display = 'hidden md:flex' }) => {
     <>
       {
         confirmed ? '' : (
-          <div className={` ${display} ${position} bottom-0 left-0 self-end w-full h-[4.2rem] bg-white md:bg-transparent drop-shadow-xl md:max-w-[30rem] md:drop-shadow-none items-center`}>
+          <div className={` ${display} ${position} flex bottom-0 left-0 self-end w-full h-[4.2rem] bg-white md:bg-transparent drop-shadow-xl md:max-w-[30rem] md:drop-shadow-none items-center`}>
             {
               step > 1 && (
                 <button onClick={decrementValue} className='absolute text-sm md:text-base left-4 md:left-0 font-medium text-cool-gray hover:text-marine-blue active:scale-95 transition-all'>Go Back</button>
