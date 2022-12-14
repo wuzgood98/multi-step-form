@@ -10,6 +10,7 @@ const AppProvider = ({ children }) => {
   const [emailEmpty, setEmailEmpty] = useState(false)
   const [phoneNumberEmpty, setPhoneNumberEmpty] = useState(false)
   const [emailInvalid, setEmailInvalid] = useState(false)
+  const [phoneNumberInvalid, setPhoneNumberInvalid] = useState(false)
 
   const pages = [{ step: 1, description: 'your info' }, { step: 2, description: 'select plan' }, { step: 3, description: 'add-ons' }, { step: 4, description: 'summary' }]
 
@@ -74,7 +75,7 @@ const AppProvider = ({ children }) => {
   })
 
   return (
-    <AppContext.Provider value={{ step, setStep, userData, setUserData, checked, setChecked, pages, confirmed, setConfirmed, nameEmpty, setNameEmpty, emailEmpty, setEmailEmpty, phoneNumberEmpty, setPhoneNumberEmpty, emailInvalid, setEmailInvalid }}>
+    <AppContext.Provider value={{ step, setStep, userData, setUserData, checked, setChecked, pages, confirmed, setConfirmed, nameEmpty, setNameEmpty, emailEmpty, setEmailEmpty, phoneNumberEmpty, setPhoneNumberEmpty, emailInvalid, setEmailInvalid, phoneNumberInvalid, setPhoneNumberInvalid }}>
       {children}
     </AppContext.Provider>
   )
