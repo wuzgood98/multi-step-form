@@ -63,7 +63,7 @@ const PersonalInfo = () => {
               id='number'
               type="text"
               name='phoneNumber'
-              className={`border  ${phoneNumberEmpty ? 'border-strawberry-red' : 'border-light-gray hover:border-purplish-blue'} focus:outline-marine-blue transition-colors cursor-pointer text-marine-blue font-medium  rounded-md indent-4 placeholder-cool-gray placeholder:font-medium placeholder:text-sm py-2 md:text-base md:placeholder:text-base md:h-12`} placeholder='e.g. +1 234 567 890'
+              className={`border  ${phoneNumberEmpty ? 'border-strawberry-red' : 'border-light-gray hover:border-purplish-blue'} focus:outline-marine-blue transition-colors cursor-pointer text-marine-blue font-medium  rounded-md indent-4 placeholder-cool-gray placeholder:font-medium placeholder:text-sm py-2 md:text-base md:placeholder:text-base md:h-12`} placeholder='e.g. +1 234 567 8900'
             />
           </div>
         </div>
