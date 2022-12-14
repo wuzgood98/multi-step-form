@@ -2,13 +2,23 @@ import React from 'react'
 import { useGlobalContext } from '../context/AppContext'
 
 const Controls = ({ position = 'fixed', display = 'hidden md:flex' }) => {
-  const { userData: { userInfo, plans, addOns }, step, setStep, setConfirmed, confirmed, setEmailEmpty, setNameEmpty, setPhoneNumberEmpty } = useGlobalContext()
+  const { userData: { userInfo, plans, addOns }, step, setStep, setConfirmed, confirmed, setEmailEmpty, setNameEmpty, setPhoneNumberEmpty, setEmailInvalid } = useGlobalContext()
+
+  const emailIsValid = (email) => {
+    const emailRegex = /^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$/
+    return emailRegex.test(email)
+  }
 
   const incrementValue = () => {
     const optionSelected = plans.some((plan) => plan.selected)
     const addOnsSelected = addOns.some((addOn) => addOn.selected)
 
     if (step === 1) {
+      if (userInfo.email && !emailIsValid(userInfo.email)) {
+        setEmailInvalid(true)
+      } else {
+        setEmailInvalid(false)
+      }
       if (!userInfo.name) {
         setNameEmpty(true)
         return
