@@ -32,7 +32,7 @@ const AddOns = () => {
           {addOns.map((addOn) => (
             <div onClick={() => chooseAddOn(addOn.id)} key={addOn.id} className={`select-none cursor-pointer w-full flex items-center justify-between p-3 md:p-5 ${addOn.selected && 'border-purplish-blue bg-magnolia'} border border-light-gray hover:border-purplish-blue rounded-md transition-colors duration-200`}>
               <div className='flex gap-4 items-center'>
-                <label htmlFor="checkbox1" className={`h-6 w-6 ${addOn.selected ? 'bg-purplish-blue' : 'bg-transparent border-light-gray'} shrink-0 border rounded-md grid place-content-center transition-colors duration-200`}>
+                <label htmlFor="checkbox1" className={`h-6 w-6 ${addOn.selected ? 'bg-purplish-blue' : 'bg-transparent border-light-gray'} shrink-0 border rounded-md grid place-content-center cursor-pointer transition-colors duration-200`}>
                   <img src={checkmark} alt="checkmark" className={`${addOn.selected ? 'animate-spring-bounce visible' : 'invisible'}`} />
                   <input
                     id='checkbox2'
